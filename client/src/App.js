@@ -34,10 +34,13 @@ function App() {
   try {
     setLoading(true);
 
-    const response = await fetch("http://localhost:5000/api/match", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+  "https://ai-resume-job-matcher-wz6.onrender.com/api/match",
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
     const data = await response.json();
     setResult(data);
