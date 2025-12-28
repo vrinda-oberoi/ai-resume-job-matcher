@@ -35,7 +35,7 @@ function App() {
     setLoading(true);
 
     const response = await fetch(
-  "https://ai-resume-job-matcher-wz6.onrender.com/api/match",
+  "https://ai-resume-job-matcher-wzc6.onrender.com/api/match",
   {
     method: "POST",
     body: formData,
