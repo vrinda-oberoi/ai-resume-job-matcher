@@ -1,3 +1,9 @@
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 // ================= IMPORTS =================
 const express = require("express");
 const cors = require("cors");
@@ -7,6 +13,16 @@ const mammoth = require("mammoth");
 const natural = require("natural");
 const jobsData = require("../jobsdata");
 
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        reject(result);
+      }
+      resolve(result);
+    });
+  });
+}
 
 // ================= APP SETUP =================
 const app = express();
@@ -63,7 +79,9 @@ function calculateTfidfSimilarity(resumeText, jobDescription) {
 
 
 // ================= MATCH API =================
-app.post("/api/match", upload.single("resume"), async (req, res) => {
+app.post("/api/match", async (req, res) => {
+  await runMiddleware(req, res, upload.single("resume"));
+
   try {
     const file = req.file;
     const { jobDescription } = req.body;
