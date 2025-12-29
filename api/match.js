@@ -5,7 +5,7 @@ const multer = require("multer");
 const pdfParse = require("pdf-parse");
 const mammoth = require("mammoth");
 const natural = require("natural");
-const jobsData = require("./jobsdata");
+const jobsData = require("../jobsdata");
 
 
 // ================= APP SETUP =================
@@ -227,7 +227,4 @@ res.status(500).json({
 });
 
 // ================= START SERVER =================
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Backend running on http://localhost:${PORT}`);
-});
+module.exports = app;
