@@ -1,20 +1,4 @@
 {
   "name": "job-matcher-project",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.2.1",
-    "mammoth": "^1.11.0",
-    "multer": "^2.0.2",
-    "natural": "^8.1.0",
-    "pdf-parse": "^2.4.5"
-  }
+  "private": true
 }

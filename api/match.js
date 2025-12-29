@@ -227,4 +227,5 @@ res.status(500).json({
 });
 
 // ================= START SERVER =================
-module.exports = app;
+export default app;
+
